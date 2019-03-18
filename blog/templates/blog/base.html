@@ -12,6 +12,9 @@
       <!-- heading text -->
       <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
 
+      <!-- font awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
       <!-- style sheet -->
       <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 
@@ -19,11 +22,22 @@
     </head>
 
     <body>
+      <div class="page-header">
 
+        <h1><a href="/">A.L. Fitness Blog</a></h1>
 
-        {% block content %}
-        {% endblock %}
+          <a href="{% url 'post_new' %}" class="fixed-bottom"><i class="fas fa-plus-circle"></i><span class="glyphicon glyphicon-plus"></span></a>
 
+      </div>
+
+             <div class="content container">
+                 <div class="row">
+                     <div class="col-md-8">
+                         {% block content %}
+                         {% endblock %}
+                     </div>
+                 </div>
+             </div>
 
       <!-- bootstrap js/jquery cdns -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
